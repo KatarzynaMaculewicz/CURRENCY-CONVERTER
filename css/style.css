@@ -1,0 +1,18 @@
+html {
+      box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+      box-sizing: inherit;
+}
+
+.body {
+      font-family: Quicksand, Helvetica, sans-serif;
+      width: 95%;
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 5px;
+      background-color: rgb(93, 95, 99);
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/form.css" rel="stylesheet">
+      <script src="js/script.js" defer></script>
+      <title>CURRENCY CONVERTER</title>
+</head>
+
+<body class="body">
+      <form class="form js-form">
+            <fieldset class="form__fieldset">
+                  <legend class="form__legend">CURRENCY CONVERTER</legend>
+                  <p>
+                        <span class="form__description"> From : </span>
+                        <br>
+                        <select class="form__select js-fromCurrency" name="from">
+                              <option value="GBP" selected>GBP</option>
+                              <option value="EUR">EUR</option>
+                              <option value="USD">USD</option>
+                              <option value="PLN">PLN</option>
+                        </select>
+                  </p>
+                  <p>
+                        <label class="form__label">
+                              <span class="form__description"> Amount * : </span>
+                              <br>
+                              <input class="form__input js-amount" type="number" name="amount" min="0" step="1"
+                                    required>
+                        </label>
+                  </p>
+                  <p>
+                        <span class="form__description"> To : </span>
+                        <br>
+                        <select class="form__select js-toCurrency" name="to">
+                              <option value="GBP" selected>GBP</option>
+                              <option value="EUR">EUR</option>
+                              <option value="USD">USD</option>
+                              <option value="PLN">PLN</option>
+                        </select>
+                  </p>
+                  <div class="form__Container">
+                        <button class="form__button">CALCULATE</button>
+                        <p><span class="js-result"></span>
+                        <p><span class="form__description--result">RESULT:</span><span
+                                    class="form__span js-finalResult"></span>
+                  </div>
+
+            </fieldset>
+            <button class="form__buttonReset js-reset" type="reset">RESET</button>
+      </form>
+      <p>* field required</p>
+</body>
+
+</html>

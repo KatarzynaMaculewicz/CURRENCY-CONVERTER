@@ -1,0 +1,113 @@
+.form {
+      border: 3px solid rgba(6, 6, 27, 0.836);
+      border-radius: 20px;
+      background-color: #c9c9c9;
+      box-shadow: 0px 10px 20px 7px rgba(0, 0, 0, 0.5);
+      text-align: center;
+}
+
+.form__fieldset {
+      border: none;
+}
+
+.form__description {
+      border: 3px solid rgba(6, 6, 27, 0.836);
+      border-radius: 10px;
+      background-color: rgba(6, 6, 27, 0.836);
+      color: whitesmoke;
+      margin-bottom: -3px;
+      width: 90%;
+      display: inline-block;
+      padding: 10px;
+}
+
+.form__description--result {
+      font-weight: 800;
+      color: rgb(13, 13, 67);
+      padding: 5px;
+}
+
+.form__span {
+      font-weight: 800;
+      color: rgb(13, 13, 67);
+      padding: 5px;
+}
+
+.form__select {
+      width: 90%;
+      border: 3px solid rgb(13, 13, 67);
+      border-radius: 10px;
+      box-shadow: -1px 5px 10px rgba(9, 9, 21, 0.47);
+      text-align: center;
+      padding: 11px;
+}
+
+.form__input {
+      width: 90%;
+      border: 3px solid rgb(13, 13, 67);
+      font-size: 15px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: -1px 5px 10px rgba(9, 9, 21, 0.47);
+      padding: 10px;
+}
+
+.form__button {
+      margin-top: 5px;
+      background-color: white;
+      color: rgb(13, 13, 67);
+      font-size: 16px;
+      font-weight: bold;
+      border: 3px solid rgb(13, 13, 67);
+      border-radius: 10px;
+      box-shadow: 0px 7px 15px 2px rgba(0, 0, 0, 0.332);
+      padding: 20px;
+}
+
+.form__button:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+}
+
+.form__button:active {
+      transform: scale(1);
+      background-color: rgb(208, 208, 209);
+      color: rgb(67, 67, 95);
+      cursor: pointer;
+}
+
+.form__Container {
+      text-align: center;
+}
+
+.form__buttonReset {
+      width: 100%;
+      border: 3px solid rgba(6, 6, 27, 0.836);
+      border-radius: 10px;
+      box-shadow: -1px 5px 10px rgba(9, 9, 21, 0.47);
+      background-color: rgba(6, 6, 27, 0.836);
+      color: whitesmoke;
+      font-size: 16px;
+      padding: 15px;
+}
+
+.form__buttonReset:hover {
+      background-color: rgba(22, 22, 49, 0.836);
+      font-weight: bold;
+}
+
+.form__buttonReset:active {
+      color: rgb(118, 121, 136);
+}
+
+.form__legend {
+      max-width: 400px;
+      border: 3px solid rgba(6, 6, 27, 0.836);
+      border-radius: 10px;
+      box-shadow: -1px 5px 10px rgba(9, 9, 21, 0.47);
+      background-color: rgba(6, 6, 27, 0.836);
+      color: whitesmoke;
+      font-size: 16px;
+      text-align: center;
+      padding: 15px;
+}
