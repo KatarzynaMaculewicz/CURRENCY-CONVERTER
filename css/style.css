@@ -10,9 +10,10 @@ html {
 
 .body {
       font-family: Quicksand, Helvetica, sans-serif;
-      width: 95%;
+      width: 90%;
       max-width: 800px;
       margin: 0 auto;
       margin-top: 5px;
-      background-color: rgb(93, 95, 99);
+      background-image: url("../images/coin-background.jpg");
+      background-size: cover;
 }
