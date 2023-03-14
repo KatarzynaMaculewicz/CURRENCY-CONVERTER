@@ -1,68 +1,92 @@
-console.log("Hello world");
+{
+      const welcome = () => {
+            console.log("Hello world");
+      };
 
-let formElement = document.querySelector(".js-form")
-let amountElement = document.querySelector(".js-amount");
-let fromCurrencyElement = document.querySelector(".js-fromCurrency");
-let toCurrencyElement = document.querySelector(".js-toCurrency");
-let resultElement = document.querySelector(".js-result");
-let finalResultElement = document.querySelector(".js-finalResult");
-let resetButton = document.querySelector(".js-reset");
+      let finalResultElement = document.querySelector(".js-finalResult");
 
-finalResultElement.innerText = 0.00.toFixed(2);
+      const init = () => {
 
-let GBPrate = 1;
-let EURrate = 1.12;
-let USDrate = 1.19;
-let PLNrate = 5.37;
+            finalResultElement.innerText = 0.00.toFixed(2);
 
-formElement.addEventListener("submit", (event) => {
-      event.preventDefault();
+            welcome();
+      };
 
-      let currency = fromCurrencyElement.value;
-      let amount = amountElement.value;
-      let rate;
+      const runCalculating = () => {
 
-      switch (currency) {
-            case "GBP":
-                  rate = GBPrate;
-                  break;
+            let formElement = document.querySelector(".js-form");
 
-            case "EUR":
-                  rate = EURrate;
-                  break;
+            formElement.addEventListener("submit", calculateResult);
+      };
+      
+      const calculateResult = (event) => {
+            event.preventDefault(); 
+      
+            const amountElement = document.querySelector(".js-amount");
+            const fromCurrencyElement = document.querySelector(".js-fromCurrency");
+            const toCurrencyElement = document.querySelector(".js-toCurrency");
 
-            case "USD":
-                  rate = USDrate;
-                  break;
+            const GBPrate = 1;
+            const EURrate = 1.12;
+            const USDrate = 1.19;
+            const PLNrate = 5.37;
 
-            case "PLN":
-                  rate = PLNrate;
-      }
+            let currency = fromCurrencyElement.value;
+            let amount = amountElement.value;
+            let rate;
 
-      let toCurrency = toCurrencyElement.value
-      let rateTo;
+            switch (currency) {
+                  case "GBP":
+                        rate = GBPrate;
+                        break;
 
-      switch (toCurrency) {
-            case "GBP":
-                  rateTo = GBPrate;
-                  break;
+                  case "EUR":
+                        rate = EURrate;
+                        break;
 
-            case "EUR":
-                  rateTo = EURrate;
-                  break;
+                  case "USD":
+                        rate = USDrate;
+                        break;
 
-            case "USD":
-                  rateTo = USDrate;
-                  break;
+                  case "PLN":
+                        rate = PLNrate;
+            }
 
-            case "PLN":
-                  rateTo = PLNrate;
-      }
+            let toCurrency = toCurrencyElement.value;
+            let rateTo;
 
-      let finalResult = amount / rate * rateTo;
-      finalResultElement.innerText = finalResult.toFixed(2);
-});
+            switch (toCurrency) {
+                  case "GBP":
+                        rateTo = GBPrate;
+                        break;
 
-resetButton.addEventListener("click", () => {
-      finalResultElement.innerText = 0.00.toFixed(2);
-});
+                  case "EUR":
+                        rateTo = EURrate;
+                        break;
+
+                  case "USD":
+                        rateTo = USDrate;
+                        break;
+
+                  case "PLN":
+                        rateTo = PLNrate;
+            }
+
+            const finalResult = amount / rate * rateTo;
+            finalResultElement.innerText = finalResult.toFixed(2);
+      };
+
+      const resetResult = () => {
+
+            const resetButton = document.querySelector(".js-reset");
+
+            resetButton.addEventListener("click", () => {
+                  finalResultElement.innerText = 0.00.toFixed(2);
+            });
+
+      };
+
+      init();
+      runCalculating();
+      resetResult();
+}
