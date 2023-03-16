@@ -1,5 +1,5 @@
 {
-      let finalResultElement = document.querySelector(".js-finalResult");
+      const finalResultElement = document.querySelector(".js-finalResult");
 
       const welcome = () => {
             console.log("Hello world");
@@ -14,7 +14,7 @@
       const onFormSubmit = () => {
             let formElement = document.querySelector(".js-form");
 
-            formElement.addEventListener("submit", calculateResult);
+            formElement.addEventListener("submit", showResult);
       };
       
       const GBPrate = 1;
@@ -24,7 +24,7 @@
 
       const calculateRate = () => {  
             const fromCurrencyElement = document.querySelector(".js-fromCurrency");
-            let currency = fromCurrencyElement.value;
+            const currency = fromCurrencyElement.value;
 
             switch (currency) {
                   case "GBP":
@@ -39,11 +39,11 @@
                   case "PLN":
                         return PLNrate;
             }
-      }  
+      };  
 
       const calculateRateTo = () => {
             const toCurrencyElement = document.querySelector(".js-toCurrency");
-            let toCurrency = toCurrencyElement.value;
+            const toCurrency = toCurrencyElement.value;
       
             switch (toCurrency) {
                   case "GBP":
@@ -58,18 +58,22 @@
                   case "PLN":
                         return PLNrate;
             }
-      }
+      };
 
-      const calculateResult = (event) => {
-            event.preventDefault(); 
-
+      const calculateResult = () => {
             const amountElement = document.querySelector(".js-amount");
             let amount = amountElement.value; 
             const rate = calculateRate();
             const rateTo = calculateRateTo();
             
-            const finalResult = amount / rate * rateTo;
-            finalResultElement.innerText = finalResult.toFixed(2);
+            return amount / rate * rateTo;
+      };
+
+      const showResult = (event) => {
+            event.preventDefault();
+            const finalResult = calculateResult();
+
+            finalResultElement.innerText = `${finalResult.toFixed(2)}`;
       };
 
       const resetResult = () => {
