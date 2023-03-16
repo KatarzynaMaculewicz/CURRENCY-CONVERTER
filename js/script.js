@@ -1,92 +1,86 @@
 {
+      let finalResultElement = document.querySelector(".js-finalResult");
+
       const welcome = () => {
             console.log("Hello world");
       };
 
-      let finalResultElement = document.querySelector(".js-finalResult");
-
       const init = () => {
-
             finalResultElement.innerText = 0.00.toFixed(2);
 
             welcome();
       };
 
-      const runCalculating = () => {
-
+      const onFormSubmit = () => {
             let formElement = document.querySelector(".js-form");
 
             formElement.addEventListener("submit", calculateResult);
       };
       
-      const calculateResult = (event) => {
-            event.preventDefault(); 
-      
-            const amountElement = document.querySelector(".js-amount");
+      const GBPrate = 1;
+      const EURrate = 1.12;
+      const USDrate = 1.19;
+      const PLNrate = 5.37;
+
+      const calculateRate = () => {  
             const fromCurrencyElement = document.querySelector(".js-fromCurrency");
-            const toCurrencyElement = document.querySelector(".js-toCurrency");
-
-            const GBPrate = 1;
-            const EURrate = 1.12;
-            const USDrate = 1.19;
-            const PLNrate = 5.37;
-
             let currency = fromCurrencyElement.value;
-            let amount = amountElement.value;
-            let rate;
 
             switch (currency) {
                   case "GBP":
-                        rate = GBPrate;
-                        break;
+                        return GBPrate;
 
                   case "EUR":
-                        rate = EURrate;
-                        break;
+                        return EURrate;
 
                   case "USD":
-                        rate = USDrate;
-                        break;
+                        return USDrate;
 
                   case "PLN":
-                        rate = PLNrate;
+                        return PLNrate;
             }
+      }  
 
+      const calculateRateTo = () => {
+            const toCurrencyElement = document.querySelector(".js-toCurrency");
             let toCurrency = toCurrencyElement.value;
-            let rateTo;
-
+      
             switch (toCurrency) {
                   case "GBP":
-                        rateTo = GBPrate;
-                        break;
-
+                        return GBPrate;
+      
                   case "EUR":
-                        rateTo = EURrate;
-                        break;
-
+                        return EURrate;
+      
                   case "USD":
-                        rateTo = USDrate;
-                        break;
-
+                        return USDrate;
+      
                   case "PLN":
-                        rateTo = PLNrate;
+                        return PLNrate;
             }
+      }
 
+      const calculateResult = (event) => {
+            event.preventDefault(); 
+
+            const amountElement = document.querySelector(".js-amount");
+            let amount = amountElement.value; 
+            const rate = calculateRate();
+            const rateTo = calculateRateTo();
+            
             const finalResult = amount / rate * rateTo;
             finalResultElement.innerText = finalResult.toFixed(2);
       };
 
       const resetResult = () => {
-
             const resetButton = document.querySelector(".js-reset");
 
             resetButton.addEventListener("click", () => {
                   finalResultElement.innerText = 0.00.toFixed(2);
             });
-
       };
 
       init();
-      runCalculating();
+      onFormSubmit();
       resetResult();
 }
